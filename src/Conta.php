@@ -1,7 +1,7 @@
 <?php
 
     class Conta {
-        private string $cpfTitular;
-        private string $nomeTitular;
-        private float $saldo;
+        public string $cpfTitular;
+        public string $nomeTitular;
+        public float $saldo;
     }
