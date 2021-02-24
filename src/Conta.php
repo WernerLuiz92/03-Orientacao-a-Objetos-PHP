@@ -6,16 +6,19 @@
         private float $saldo;
 
 
-
         public function getCpfTitular() {
             return $this->cpfTitular;
+        }
+
+        public function setCpfTitular($cpfTitular) {
+            $this->cpfTitular = $cpfTitular;
         }
 
         public function getNomeTitular() {
             return $this->nomeTitular;
         }
 
-        public function setNomeTitular() {
+        public function setNomeTitular($nomeTitular) {
             $this->nomeTitular = $nomeTitular;
         }
 
@@ -23,7 +26,7 @@
             return $this->saldo;
         }
 
-        public function setSaldo() {
+        public function setSaldo($saldo) {
             $this->saldo = $saldo;
         }
 
