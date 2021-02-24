@@ -37,7 +37,8 @@
     var_dump($conta3);
     echo "</pre>";
 
+    echo Conta::getNumeroDeContas(). "<br>";
+
+    unset($conta4, $conta5);
+
     echo Conta::getNumeroDeContas();
-
-
-

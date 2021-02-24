@@ -19,6 +19,11 @@
 
         }
 
+        public function __destruct()
+        {
+            self::$numeroDeContas--;
+        }
+
 
         public function getCpfTitular(): string  
         {
