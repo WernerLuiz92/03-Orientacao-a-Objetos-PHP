@@ -44,7 +44,7 @@
                 echo "Saldo insuficiente";
             } else {
                 $this->saldo -= $valorASacar;
-                echo "Saque realizado com sucesso";
+                echo "Saque realizado com sucesso. Seu saldo atual é de: R$ {$this->saldo}";
             }
         }
 
@@ -54,7 +54,7 @@
                 echo "O valor a ser depositado deve ser maior do que zero!";
             } else {
                 $this->saldo += $valorADepositar;
-                echo "Deposito efetuado com sucesso";
+                echo "Deposito efetuado com sucesso. Seu saldo atual é de: R$ {$this->saldo}";
             }
         }
     }
