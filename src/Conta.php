@@ -5,6 +5,7 @@
         private string $cpfTitular;
         private string $nomeTitular;
         private float $saldo;
+        private static $numeroDeContas = 0;
 
         public function __construct(string $cpfTitular, string $nomeTitular)
         {
@@ -13,6 +14,8 @@
             $this->validaNomeTitular($nomeTitular);
             $this->nomeTitular = $nomeTitular;
             $this->saldo = 0;
+
+            self::$numeroDeContas++;
 
         }
 
@@ -112,5 +115,10 @@
                 echo "O nome precisa conter pelo menos 5 caracteres.";
                 exit();
             }
+        }
+
+        public static function getNumeroDeContas(): int
+        {
+            return self::$numeroDeContas;
         }
     }
