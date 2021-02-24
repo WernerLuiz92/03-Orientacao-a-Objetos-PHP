@@ -32,6 +32,11 @@
             return $this->titular->getNome();
         }
 
+        public function getCpfTitular(): string
+        {
+            return $this->titular->getNumeroCpf();
+        }
+
         public function saca(float $valorASacar): void
         {
             if ($valorASacar > $this->saldo) {
