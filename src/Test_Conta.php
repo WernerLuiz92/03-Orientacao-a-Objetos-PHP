@@ -2,9 +2,9 @@
 
     require 'Conta.php';
 
-    $conta1 = new Conta("546.786.026-74", "Rita Cecília Martins");
-    $conta2 = new Conta("299.854.283-23", "Ana Stefany Cavalcanti");
-    $conta3 = new Conta("066.970.398-25", "Vicente Márcio Rocha");
+    $conta1 = new Conta("183.543.930-62", "Rita Cecília Martins");
+    $conta2 = new Conta("378.890.090-38", "Ana Stefany Cavalcanti");
+    $conta3 = new Conta("169.993.700-10", "Vicente Márcio Rocha");
 
     echo "Getters e Setters: <br>";
     echo "getCpfTitular: {$conta1->getCpfTitular()} <br>";

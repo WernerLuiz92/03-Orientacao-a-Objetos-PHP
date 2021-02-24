@@ -8,7 +8,9 @@
 
         public function __construct(string $cpfTitular, string $nomeTitular)
         {
+            $this->validaCpfTitular($cpfTitular);
             $this->cpfTitular = $cpfTitular;
+            $this->validaNomeTitular($nomeTitular);
             $this->nomeTitular = $nomeTitular;
             $this->saldo = 0;
 
@@ -71,5 +73,44 @@
             $contaDestino->deposita($valorATransferir);
             echo "Transferencia realizada com sucesso. Seu saldo atual é de: R$ {$this->saldo} <br>";
             
+        }
+
+        // Este algoritmo não é meu, tentar entender mais adiante!!!
+        private function validaCpfTitular($cpfTitular): void
+        {
+            // Extrai somente os números
+            $cpfTitular = preg_replace( '/[^0-9]/is', '', $cpfTitular );
+                
+            // Verifica se foi informado todos os digitos corretamente
+            if (strlen($cpfTitular) != 11) {
+                echo "CPF Inválido";
+                exit();
+            }
+    
+            // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
+            if (preg_match('/(\d)\1{10}/', $cpfTitular)) {
+                echo "CPF Inválido";
+                exit();
+            }
+    
+            // Faz o calculo para validar o CPF
+            for ($t = 9; $t < 11; $t++) {
+                for ($d = 0, $c = 0; $c < $t; $c++) {
+                    $d += $cpfTitular[$c] * (($t + 1) - $c);
+                }
+                $d = ((10 * $d) % 11) % 10;
+                if ($cpfTitular[$c] != $d) {
+                    echo "CPF Inválido";
+                    exit();
+                }
+            }
+        }
+
+        private function validaNomeTitular($nomeTitular): void
+        {
+            if (strlen($nomeTitular) < 5) {
+                echo "O nome precisa conter pelo menos 5 caracteres.";
+                exit();
+            }
         }
     }
